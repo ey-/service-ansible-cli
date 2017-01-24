@@ -27,9 +27,6 @@ RUN \
   tar -xzf ansible.tar.gz -C ansible --strip-components 1 && \
   rm -fr ansible.tar.gz /ansible/docs /ansible/examples /ansible/packaging
 
-RUN mkdir -p /ansible/playbooks
-WORKDIR /ansible/playbooks
-
 ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
