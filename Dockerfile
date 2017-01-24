@@ -1,5 +1,6 @@
 FROM docksal/cli:1.0-php7
-
+USER root
+ENV HOME /root
 RUN \
   DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes --no-install-recommends install \
     curl \
@@ -36,3 +37,6 @@ ENV ANSIBLE_ROLES_PATH /ansible/playbooks/roles
 ENV ANSIBLE_SSH_PIPELINING True
 ENV PATH /ansible/bin:$PATH
 ENV PYTHONPATH /ansible/lib
+
+USER docker
+ENV HOME /home/docker
