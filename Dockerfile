@@ -1,19 +1,19 @@
 FROM docksal/cli:1.0-php7
 USER root
 ENV HOME /root
-RUN \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes --no-install-recommends install \
     curl \
     openssh-client \
     python \
-    py-boto \
-    py-dateutil \
-    py-httplib2 \
-    py-jinja2 \
-    py-paramiko \
-    py-pip \
-    py-setuptools \
-    py-yaml \
+    python-pip \
+    python-yaml \
+    python-setuptools \
+    python-dateutil \
+    python-httplib2 \
+    python-jinja2 \
+    python-boto \
+    python-paramiko \
     tar && \
   pip install --upgrade pip python-keyczar && \
   rm -rf /var/cache/apk/*
@@ -24,7 +24,7 @@ RUN echo "[local]" >> /etc/ansible/hosts && \
 
 RUN \
   curl -fsSL http://releases.ansible.com/ansible/ansible-latest.tar.gz -o ansible.tar.gz && \
-  tar -xzf ansible.tar.gz -C ansible --strip-components 1 && \
+  tar -xzf ansible.tar.gz -C /ansible --strip-components 1 && \
   rm -fr ansible.tar.gz /ansible/docs /ansible/examples /ansible/packaging
 
 ENV ANSIBLE_GATHERING smart
