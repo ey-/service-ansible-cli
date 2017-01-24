@@ -1,7 +1,7 @@
 FROM docksal/cli:1.0-php7
 
 RUN \
-  apk-install \
+  DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes --no-install-recommends install \
     curl \
     openssh-client \
     python \
