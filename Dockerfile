@@ -1,4 +1,4 @@
-FROM docksal/cli:1.0-php7
+FROM docksal/cli:1.1-php7
 USER root
 ENV HOME /root
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
