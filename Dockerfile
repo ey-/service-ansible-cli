@@ -36,5 +36,4 @@ ENV ANSIBLE_SSH_PIPELINING True
 ENV PATH /ansible/bin:$PATH
 ENV PYTHONPATH /ansible/lib
 
-USER docker
 ENV HOME /home/docker
