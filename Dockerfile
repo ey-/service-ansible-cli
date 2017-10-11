@@ -14,6 +14,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     python-jinja2 \
     python-boto \
     python-paramiko \
+    python-mysqldb \
     cron \
     tar && \
   pip install --upgrade pip python-keyczar && \
