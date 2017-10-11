@@ -16,6 +16,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     python-paramiko \
     python-mysqldb \
     cron \
+    netcat \
     tar && \
   pip install --upgrade pip python-keyczar && \
   rm -rf /var/cache/apk/*
